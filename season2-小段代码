@@ -1,1 +1,130 @@
-
+# 11 比率
+"""
+import math
+a = input()
+integer_part, decimal_part = a.split('.')
+b = len(decimal_part)
+a = float(a)
+up = int(a*10**b)
+down = 10**b
+c = math.gcd(up, down)
+up /= c
+down /= c
+print("%d/%d" % (up, down))     #rude Code By Zhen_guo
+"""
+'''
+import fractions
+n=float(input())
+n=int(n*10000000)
+a=10000000#用于保护准确度
+print(fractions.Fraction(n,10000000))   #elegent Code By Phoenix_ZH
+'''
+# 12 计算狗的年龄
+'''
+a = eval(input())
+b = 0
+if a <= 2:
+    b = 10.5 * a
+else:
+    b = 13 + 4*a
+print(b)
+'''
+# 13 直角坐标转换为极坐标
+'''
+import math
+x = eval(input())
+y = eval(input())
+P = (x ** 2 + y ** 2) ** 0.5
+C = math.acos(x / P)
+print(f"{P:.4f},{C:.4f}")
+'''
+# 14 指定精度舍入
+'''
+f = eval(input())
+n = eval(input())
+f = round(f, n)
+print(f"{f}")
+'''
+# 15 圆柱
+'''
+import math
+h = eval(input())
+r = eval(input())
+pi = math.pi
+s_up = pi * r**2
+v = s_up*h
+s = round(2*pi*r*h+2*s_up, 4)
+print("{:.4f}\n{:.4f}".format(v, s))
+'''
+# 16 给定经纬度计算地球两点间距离
+'''
+import math
+r = 6371
+w1 = math.radians(eval(input()))
+j1 = math.radians(eval(input()))
+w2 = math.radians(eval(input()))
+j2 = math.radians(eval(input()))
+def hav(theta):
+    return (1-math.cos(theta))/2
+C = hav(abs(w1 - w2)) + math.cos(w1)*math.cos(w2)*hav(abs(j1 - j2))
+C = math.acos(1-2*C)
+print(f'{C*r:.4f}', 'km', sep='')
+'''
+# 17 风寒指数
+'''
+v = eval(input())
+t = eval(input())
+wind_chill = 13.12 + 0.6215*t - 11.37*v**0.16 + 0.3965*t*v**0.16
+print(round(wind_chill))
+'''
+# 18 两个分数的加减乘除
+'''
+import fractions
+a1 = eval(input())
+a2 = eval(input())
+b1 = eval(input())
+b2 = eval(input())
+x = fractions.Fraction(a1,a2)
+y = fractions.Fraction(b1,b2)
+print(f'({a1}/{a2})+({b1}/{b2})={x+y}')
+print(f'({a1}/{a2})-({b1}/{b2})={x-y}')
+print(f'({a1}/{a2})*({b1}/{b2})={x*y}')
+print(f'({a1}/{a2})/({b1}/{b2})={x/y}')
+'''
+# 19 RGB转HSV
+'''
+R = eval(input())/255
+G = eval(input())/255
+B = eval(input())/255
+max = max(R, G, B); min = min(R, G, B)
+V = 100*max
+if V == 0:
+    S = 0
+else:
+    S = 100 * (max - min)/max
+if max == R:
+    H = 60 * (G - B) / (max - min)
+elif max == G:
+    H = 60 * (2+(B-R)/ (max - min))
+else:
+    H = 60 * (4+(R-G)/ (max - min))
+while H <= 0:
+    H = H + 360
+print(f'{H:.4f},{S:.4f}%,{V:.4f}%')
+'''
+# 20 勾股定理
+x = eval(input())
+y = eval(input())
+C = (x ** 2 + y ** 2) ** 0.5
+side = 'non'
+if C == int(C):  # a&b
+    side = 'c'
+else:
+    x, y = max(x, y), min(x, y)
+    C = (x ** 2 - y ** 2) ** 0.5
+    if C == int(C):  # c&a(b)
+        if C < y:
+            side = 'a'
+        else:
+            side = 'b'
+print(side)
