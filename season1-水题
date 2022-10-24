@@ -1,38 +1,38 @@
-# 1
+# 1 Hello World
 """
 print("Hello world")
 """
-# 2
+# 2 A+B
 '''
 a = int(input())
 b = int(input())
 print(a+b)
 '''
-# 3
+# 3 N位小数
 '''
 a = float(input())
 b = int(input())
 print(round(a, b))
 '''
-# 4
+# 4 二进制
 '''
 a = int(input())
 b = int(input())
 c = a & b
 print(bin(a), bin(b), c, sep=' ')
 '''
-# 5
+# 5 ASCII
 '''
 a = int(input())
 b = input()
 print(chr(a), ord(b))
 '''
-# 6
+# 6 进制转换
 '''
 a = int(input())
 print("{},{},{}".format(oct(a), hex(a), bin(a)))
 '''
-# 7
+# 7 整数格式输出
 '''
 n = int(input())
 print("{:<10}\n{:>10}".format(n, n))
@@ -45,18 +45,18 @@ absa = str(abs(a))
 b = "+" + absa
 print(f"{a:<10}\n{a:>10}\n{b:<10}\n{b:>10}")    # Code By Zhenguo Li
 '''
-# 8
+# 8 浮点数输出
 '''
 a = float(input())
 b = str(format(a, ','))
 print(f"{round(a,6)}/{round(a,2)}/{round(a,8)}/{a:.6e}/{b}")
 '''
-# 9
+# 9 各种表示
 '''
 a = int(input())
 print(f"{a:b},{a:o},{a:#o},{a:x},{a:#x},{a:#X}")
 '''
-# 10
+# 10 动态宽度
 a = int(input())
 a = f"{a:b}"
 b = int(input())
